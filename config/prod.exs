@@ -23,7 +23,7 @@ config :logger, level: :info
 config :app2, App2.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "5"),
   ssl: true
 
 # ## SSL Support
