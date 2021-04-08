@@ -16,9 +16,11 @@ defmodule App2Web.Router do
   scope "/", App2Web do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", ItemController, :index
     resources "/items", ItemController
     get "/items/toggle/:id", ItemController, :toggle
+    get "/clear", ItemController, :clear_completed
+    # this route will "catch all" so has to be last:
     get "/:filter", ItemController, :index
   end
 
