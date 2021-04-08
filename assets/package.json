@@ -1,5 +1,11 @@
 {
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MMcClure11/todo"
+  },
+  "engines": {
+    "node": ">=12"
+  },
   "description": " ",
   "license": "MIT",
   "scripts": {
