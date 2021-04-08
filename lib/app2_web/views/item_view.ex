@@ -22,4 +22,21 @@ defmodule App2Web.ItemView do
     Enum.filter(items, fn i -> i.status == 0 end) 
     |> Enum.count
   end
+
+  # Allows for filtering
+  def filter(items, str) do
+    case str do
+      "all" -> items
+      "active" -> Enum.filter(items, fn i -> i.status == 0 end)
+      "completed" -> Enum.filter(items, fn i -> i.status == 1 end)
+    end
+  end
+
+  # sets the 'selected' class which will select the appropriate tab in the footer navigation
+  def selected(filter, str) do
+    case filter == str do
+      true -> "selected"
+      false -> ""
+    end
+  end
 end
